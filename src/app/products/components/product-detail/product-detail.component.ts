@@ -49,4 +49,22 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
+  updateProduct() {
+    const updatProduct: Partial<Product> = {
+      title: 'rick y morty',
+      price: 88888,
+      description: 'Muestrenme lo que tienen!!!',
+
+    };
+    this.producService.updateProduct('2', updatProduct)
+    .subscribe(product => {
+      console.log(product);
+    });
+
+  }
+
+  deleteProduct() {
+    this.producService.deleteProduct('222');
+  }
+
 }
